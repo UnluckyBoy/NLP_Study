@@ -9,7 +9,9 @@ from Vocabulary import Vocabulary
 
 
 def build_vocab(json, threshold):
-    """Build a simple vocabulary wrapper."""
+    """Build a simple vocabulary wrapper.
+    ###构建简单的词汇表。###
+    """
     coco = COCO(json)
     counter = Counter()
     ids = coco.anns.keys()
@@ -22,9 +24,11 @@ def build_vocab(json, threshold):
             print("[{}/{}] Tokenized the captions.".format(i+1, len(ids)))
 
     # If the word frequency is less than 'threshold', then the word is discarded.
+    #单词频率小于'threshold'，则将被丢弃。
     words = [word for word, cnt in counter.items() if cnt >= threshold]
 
     # Create a vocab wrapper and add some special tokens.
+    #创建词汇表并添加一些特殊令牌。
     vocab = Vocabulary()
     vocab.add_word('<pad>')
     vocab.add_word('<start>')
@@ -32,6 +36,7 @@ def build_vocab(json, threshold):
     vocab.add_word('<unk>')
 
     # Add the words to the vocabulary.
+    #把单词添加到词汇表中
     for i, word in enumerate(words):
         vocab.add_word(word)
     return vocab
