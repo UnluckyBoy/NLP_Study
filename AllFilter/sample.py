@@ -72,7 +72,7 @@ def main(args):
     # 解决中文显示问题
     plt.rcParams['font.sans-serif'] = ['SimHei']
     plt.rcParams['axes.unicode_minus'] = False
-    plt.title("原图生物")#title
+    plt.title("原图")#title
     plt.imshow(np.asarray(image))
 
     ###以openCV绘制
