@@ -1,0 +1,12 @@
+matplotlib
+nltk
+numpy
+Pillow
+argparse
+
+Run steps:
+1、运行 build_vocab.py
+2、运行 resize.py
+3、运行 train_Allfilter.py
+4、运行 sample.py
+(其中第四步要配置参数:--image ./png/xxx.jpg)
