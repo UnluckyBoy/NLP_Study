@@ -5,7 +5,7 @@ Pillow
 argparse
 
 Run steps:
-1、运行 build_vocab.py
+1、运行 build_vocab.py 建立词汇表
 2、运行 resize.py
 3、运行 train_Allfilter.py
 4、运行 sample.py
