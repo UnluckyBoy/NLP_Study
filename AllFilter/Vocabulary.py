@@ -3,7 +3,7 @@
 # from Vocabulary import Vocabulary
 ##
 class Vocabulary(object):
-    """Simple vocabulary wrapper."""
+    """词汇包装类."""
     def __init__(self):
         self.word2idx = {}
         self.idx2word = {}

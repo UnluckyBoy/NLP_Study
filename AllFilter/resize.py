@@ -4,11 +4,11 @@ from PIL import Image
 
 
 def resize_image(image, size):
-    """Resize an image to the given size."""
+    """调整图像的大小"""
     return image.resize(size, Image.ANTIALIAS)
 
 def resize_images(image_dir, output_dir, size):
-    """Resize the images in 'image_dir' and save into 'output_dir'."""
+    """调整图像到'image_dir'并保存到'output_dir'."""
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
