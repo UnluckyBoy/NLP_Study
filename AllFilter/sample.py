@@ -61,6 +61,7 @@ def main(args):
         if word == '<end>':
             break
     sentence = ' '.join(sampled_caption)
+    #sentence = vocab.idx2word[sampled_ids[1]].join(vocab.idx2word[sampled_ids[2]])
 
     # Print out the image and the generated caption
 
