@@ -54,17 +54,19 @@ def main(args):
     sampled_ids = sampled_ids[0].cpu().numpy()  # (1, max_seq_length) -> (max_seq_length)
 
     # Convert word_ids to words
-    sampled_caption = []
-    for word_id in sampled_ids:
-        word = vocab.idx2word[word_id]
-        sampled_caption.append(word)
-        if word == '<end>':
-            break
-    sentence = ' '.join(sampled_caption)
-    #sentence = vocab.idx2word[sampled_ids[1]].join(vocab.idx2word[sampled_ids[2]])
+    #通过词汇id键值在词汇表中创建一句话
+    #sampled_caption = []
+    #for word_id in sampled_ids:
+        #word = vocab.idx2word[word_id]
+        #sampled_caption.append(word)
+        #if word == '<end>':
+            #break
+    #sentence = ' '.join(sampled_caption)
+
+    #不需要一句话，只需要识别出生物
+    sentence = vocab.idx2word[sampled_ids[1]]+' '+vocab.idx2word[sampled_ids[2]]
 
     # Print out the image and the generated caption
-
     # 打印出最终识别结果并绘制
     print(args.image + "_最终识别结果：" + sentence)
     # 绘制原图

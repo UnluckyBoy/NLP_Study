@@ -14,6 +14,7 @@ index=len(file)
 num_01=file.iloc[:,0]
 num_02=file.iloc[:,1]
 num_03=file.iloc[:,2]
+###折线图
 for i in range(index):
     image = plt.figure()  # 生成一个空白图形并且将其赋值给fig对象
     #print(num_01[i],num_02[i],num_03[i])
@@ -23,6 +24,6 @@ for i in range(index):
     plt.ylabel("Y")
     #plt.show()
     imagename=str(i)+".png"
-    image.savefig(r'E:\MatrixProject\NLPDemo\Scripts\IamgeData\{}.png'.format(i))
+    image.savefig(r'E:\MatrixProject\NLPDemo\Scripts\IamgeData\images\{}.png'.format(i))
     plt.close(image)
 print("完毕！")
