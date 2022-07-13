@@ -25,7 +25,6 @@ def load_image(image_path, transform=None):
         image = transform(image).unsqueeze(0)
     return image
 
-
 def main(args):
     # Image preprocessing
     transform = transforms.Compose([
@@ -69,12 +68,28 @@ def main(args):
     #不需要一句话，只需要识别出生物
     #sentence = vocab.idx2word[sampled_ids[1]]+' '+vocab.idx2word[sampled_ids[2]]
     sentence = vocab.idx2word[sampled_ids[2]]
+
+    ###转换中英文
     with open(args.Json_path, 'r', encoding='utf-8') as fp:
         json_data = json.load(fp)
-        #print('---Key---:' + sentence + '---Value---:' + str(json_data[sentence]))
         for Key in json_data:
             mWord=json_data[Key]
-            print(mWord)
+            #mValue = mWord[0][sentence]
+            #print(mValue)
+            for i in range(len(mWord)):
+                mDic_word=mWord[i]
+                #print(mDic_word)
+                for key in mDic_word.keys():
+                    #print(key)
+                    if sentence==key:
+                        #print(mDic_word[key])
+                        sentence=mDic_word[key]
+                        break
+                    else:
+                        break
+                    pass
+                pass
+            pass
 
     # Print out the image and the generated caption
     # 打印出最终识别结果并绘制
