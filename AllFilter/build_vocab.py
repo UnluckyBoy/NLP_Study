@@ -20,7 +20,7 @@ def build_vocab(json, threshold):
         ###anns获取Json数据中的"annotations".
         """
         #caption = str(coco.cats[id]['name'])
-        #print("单词:"+caption)
+        print("单词:"+caption)
         tokens = nltk.tokenize.word_tokenize(caption.lower())
         counter.update(tokens)
 
