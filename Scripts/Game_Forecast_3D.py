@@ -17,7 +17,7 @@ def DoForecast(file_path,column):
     """
     file = pd.read_csv(file_path, header=None, encoding='utf-8')
     index = len(file)
-    #index=5338
+    #index=5266
     num=file.iloc[:,column]
     result=[]
     for i in range(index):
