@@ -78,7 +78,7 @@ def main(args):
     result_num_03 =DoForecast(args.file_path,2)
     print("获取结果:"+"\nresult_num_01:" + str(result_num_01)+"\nresult_num_02:"+str(result_num_02)+"\nresult_num_03:"+str(result_num_03))
 
-    indexList=[6,7,7]#上一期数字
+    indexList=[1,8,1]#上一期数字
     result_index_01=GetLastIndex(indexList[0],result_num_01)
     result_index_02=GetLastIndex(indexList[1],result_num_02)
     result_index_03=GetLastIndex(indexList[2],result_num_03)
@@ -97,6 +97,6 @@ def main(args):
 if __name__=='__main__':
     #file_dir = r"./work.csv"
     parser = argparse.ArgumentParser()
-    parser.add_argument('--file_path', type=str,default='./work.csv',help='csv文件地址')
+    parser.add_argument('--file_path', type=str,default='./data/work.csv',help='csv文件地址')
     args = parser.parse_args()
     main(args)

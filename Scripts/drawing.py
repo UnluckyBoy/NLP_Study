@@ -3,7 +3,7 @@ import os
 import pandas as pd
 """绘制折线图"""
 #读取csv文档
-file_dir=r"./work.csv"
+file_dir=r"./data/work.csv"
 file=pd.read_csv(file_dir,header=None,encoding= 'utf-8')
 #print(file)
 #index=5487
